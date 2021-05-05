@@ -1,15 +1,3 @@
-"      ___           ___           ___           ___                       ___
-"     /\__\         /\  \         /\  \         /\__\          ___        /\__\
-"    /::|  |       /::\  \       /::\  \       /:/  /         /\  \      /::|  |
-"   /:|:|  |      /:/\:\  \     /:/\:\  \     /:/  /          \:\  \    /:|:|  |
-"  /:/|:|  |__   /::\~\:\  \   /:/  \:\  \   /:/__/  ___      /::\__\  /:/|:|__|__
-" /:/ |:| /\__\ /:/\:\ \:\__\ /:/__/ \:\__\  |:|  | /\__\  __/:/\/__/ /:/ |::::\__\
-" \/__|:|/:/  / \:\~\:\ \/__/ \:\  \ /:/  /  |:|  |/:/  / /\/:/  /    \/__/~~/:/  /
-"     |:/:/  /   \:\ \:\__\    \:\  /:/  /   |:|__/:/  /  \::/__/           /:/  /
-"     |::/  /     \:\ \/__/     \:\/:/  /     \::::/__/    \:\__\          /:/  /
-"     /:/  /       \:\__\        \::/  /       ~~~~         \/__/         /:/  /
-"     \/__/         \/__/         \/__/                                   \/__/
-
 set number " Line numbers
 filetype plugin indent on " Autodetect filetypes
 set nowrap " No line wrap
@@ -34,9 +22,6 @@ set foldlevel=20
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim' " Colorscheme
-Plug 'roxma/nvim-completion-manager' " Completion framework
-Plug 'w0rp/ale' " Linting framework
-Plug 'scrooloose/nerdtree' " File explorer
 Plug 'vim-airline/vim-airline' " Status line
 Plug 'vim-airline/vim-airline-themes' " Statuline themes
 Plug 'junegunn/limelight.vim' " Highlight current paragraph
@@ -44,19 +29,12 @@ Plug 'junegunn/goyo.vim' " Distraction free mode
 Plug 'jiangmiao/auto-pairs' " Pairing
 Plug 'tpope/vim-surround' " Matching symbols
 Plug 'dhruvasagar/vim-table-mode' " Tables
-" Plug 'SirVer/ultisnips' " Snippets engine
-" Plug 'honza/vim-snippets' " Snippets
-Plug 'mattn/emmet-vim' " Web languages utility
-Plug 'dart-lang/dart-vim-plugin' " Minimal dart language support
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lynnard/pandoc-preview.vim' " PDF preview for pandoc
-Plug 'pangloss/vim-javascript' "JS Mode
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'} " JS Completion
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'lervag/vimtex' " Latex
 Plug 'aserebryakov/vim-todo-lists' " To_do list utility
-Plug 'udalov/kotlin-vim' " Minimal kotlin support
 Plug 'junegunn/fzf' " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 Plug 'aklt/plantuml-syntax' " PlantUML support
@@ -79,11 +57,17 @@ let g:ale_enabled = 0 " Disabled linting by default
 let g:ale_lint_on_text_changed = 'never' "Lint on save only
 " let g:airline#extensions#ale#enabled = 1
 
+" File explorer configuration
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
+
 " Custom bindings
 " use jk to exit insert mode
 imap jk <ESC>
 " Leader + n to open file explorer
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>n :Vexplore<CR>
 "Resize current buffer
 " Space + L increases vertical size by 5
 map <Leader>L :vertical res +5<CR>
