@@ -42,6 +42,7 @@ Plug 'sheerun/vim-polyglot' " Syntax highlighting
 Plug 'uiiaoo/java-syntax.vim' " Java syntax highlighting
 Plug 'majutsushi/tagbar' " Outline
 Plug 'oblitum/rainbow' " Matching colors symbols
+Plug 'udalov/kotlin-vim' " Kotlin support
 call plug#end()
 " Set colorcheme
 let base16colorspace=256
@@ -115,7 +116,7 @@ nnoremap <Leader>t g<C-]>
 map <Leader>t g<C-]>
 
 " Fuzzy finding
-map <C-p> :GFiles<CR>
+map <C-p> :FZF<CR>
 
 " Blank characters
 set listchars=tab:\|\ ,space:_
