@@ -33,6 +33,7 @@ Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lynnard/pandoc-preview.vim' " PDF preview for pandoc
 Plug 'tpope/vim-fugitive' " Git integration
+Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex' " Latex
 Plug 'aserebryakov/vim-todo-lists' " To_do list utility
 Plug 'junegunn/fzf' " Fuzzy finder
@@ -120,3 +121,6 @@ map <C-p> :GFiles<CR>
 " Blank characters
 set listchars=tab:\|\ ,space:_
 set expandtab
+
+" Reduce update time to make GitGutter more responsive
+set updatetime=100
