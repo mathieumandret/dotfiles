@@ -117,7 +117,8 @@ map <Leader>t g<C-]>
 
 " Fuzzy finding
 map <C-p> :GFiles<CR>
-
+" Buffers navigation
+nnoremap <C-n> :Buffers<CR>
 " Blank characters
 set listchars=tab:\|\ ,space:_
 set expandtab
