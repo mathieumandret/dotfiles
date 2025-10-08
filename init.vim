@@ -4,7 +4,7 @@ set nowrap " No line wrap
 set showcmd " Show commands as they are typed
 set noshowmode " Dont show current mode
 set ruler
-" Better splits
+" Better splits, add new split to the right/bootom
 set splitright
 set splitbelow
 " Tabs size
@@ -24,39 +24,28 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'chriskempson/base16-vim' " Colorscheme
 Plug 'vim-airline/vim-airline' " Status line
 Plug 'vim-airline/vim-airline-themes' " Statuline themes
-Plug 'junegunn/limelight.vim' " Highlight current paragraph
-Plug 'junegunn/goyo.vim' " Distraction free mode
 Plug 'jiangmiao/auto-pairs' " Pairing
 Plug 'tpope/vim-surround' " Matching symbols
-Plug 'dhruvasagar/vim-table-mode' " Tables
-Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc' " Pandoc support
 Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'lynnard/pandoc-preview.vim' " PDF preview for pandoc
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'airblade/vim-gitgutter'
 Plug 'lervag/vimtex' " Latex
-Plug 'aserebryakov/vim-todo-lists' " To_do list utility
 Plug 'junegunn/fzf' " Fuzzy finder
 Plug 'junegunn/fzf.vim'
 Plug 'aklt/plantuml-syntax' " PlantUML support
 Plug 'sheerun/vim-polyglot' " Syntax highlighting
 Plug 'uiiaoo/java-syntax.vim' " Java syntax highlighting
 Plug 'majutsushi/tagbar' " Outline
-Plug 'oblitum/rainbow' " Matching colors symbols
 call plug#end()
 " Set colorcheme
 let base16colorspace=256
-colo base16-seti
+colo base16-gruvbox-dark-hard
 
 " Java syntax
 "
 " Don't highlight variables
 highlight link JavaIdentifier NONE
-
-" Linter config
-let g:ale_enabled = 0 " Disabled linting by default
-let g:ale_lint_on_text_changed = 'never' "Lint on save only
-" let g:airline#extensions#ale#enabled = 1
 
 " File explorer configuration
 let g:netrw_banner = 0
@@ -91,27 +80,12 @@ let g:airline_powerline_fonts = 1
 " Completion framework
 set shortmess+=c " Dont show full messages
 
-" Goyo
-let g:goyo_width = 120
-let g:goyo_margin_top = 3
-let g:goyo_margin_bottom = 3
-
 " Django settings
 autocmd Filetype python set sw=4
 autocmd Filetype python set ts=4
 autocmd Filetype python set sts=4
 
-" Snippet settings
-"let g:UltiSnipsExpandTrigger = "<C-j>"
-"let g:UltiSnipsJumpForwardTrigger = "<C-j>"
-"let g:UltiSnipsJumpBackwardTrigger = "<C-p>"
-"let g:UltiSnipsListSnippets = "<C-k>"
-
-" Dart
-let g:dart_corelib_highlight=v:true
-let g:dart_style_guide= 2
-
-" Tags
+" Tags leader
 nnoremap <Leader>t g<C-]>
 map <Leader>t g<C-]>
 
